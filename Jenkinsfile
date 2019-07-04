@@ -55,6 +55,7 @@ pipeline {
         stage('Clean up Grid') {
             steps {
                 sh label:'', script: 'docker stop myselenium'
+                sh label:'', script: 'docker network rm mynet'
             }
         }
         stage('Stop app') {
